@@ -21,6 +21,9 @@
 		B25D43E9146470EE00A7069F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25D43C7146470ED00A7069F /* Foundation.framework */; };
 		B25D43F1146470EE00A7069F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B25D43EF146470EE00A7069F /* InfoPlist.strings */; };
 		B25D43F4146470EE00A7069F /* olympicparkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B25D43F3146470EE00A7069F /* olympicparkTests.m */; };
+		B25D43FE146473E000A7069F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25D43FD146473E000A7069F /* AVFoundation.framework */; };
+		B2E323FF1466C8E800E8DDF6 /* html in Resources */ = {isa = PBXBuildFile; fileRef = B2E323FE1466C8E800E8DDF6 /* html */; };
+		B2E324041466CC5700E8DDF6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2E324031466CC5700E8DDF6 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,22 +41,25 @@
 		B25D43C5146470ED00A7069F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B25D43C7146470ED00A7069F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B25D43C9146470ED00A7069F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B25D43CD146470ED00A7069F /* olympicpark-Info.plist */ = {isa = PBXFileReference; path = "olympicpark-Info.plist"; sourceTree = "<group>"; };
+		B25D43CD146470ED00A7069F /* olympicpark-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "olympicpark-Info.plist"; sourceTree = "<group>"; };
 		B25D43CF146470ED00A7069F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B25D43D1146470ED00A7069F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B25D43D3146470ED00A7069F /* olympicpark-Prefix.pch */ = {isa = PBXFileReference; path = "olympicpark-Prefix.pch"; sourceTree = "<group>"; };
-		B25D43D4146470ED00A7069F /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		B25D43D3146470ED00A7069F /* olympicpark-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "olympicpark-Prefix.pch"; sourceTree = "<group>"; };
+		B25D43D4146470ED00A7069F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B25D43D5146470ED00A7069F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B25D43D8146470ED00A7069F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		B25D43DB146470ED00A7069F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		B25D43DD146470ED00A7069F /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		B25D43DD146470ED00A7069F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B25D43DE146470ED00A7069F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B25D43E5146470EE00A7069F /* olympicparkTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = olympicparkTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25D43E6146470EE00A7069F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		B25D43EE146470EE00A7069F /* olympicparkTests-Info.plist */ = {isa = PBXFileReference; path = "olympicparkTests-Info.plist"; sourceTree = "<group>"; };
+		B25D43EE146470EE00A7069F /* olympicparkTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "olympicparkTests-Info.plist"; sourceTree = "<group>"; };
 		B25D43F0146470EE00A7069F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B25D43F2146470EE00A7069F /* olympicparkTests.h */ = {isa = PBXFileReference; path = olympicparkTests.h; sourceTree = "<group>"; };
+		B25D43F2146470EE00A7069F /* olympicparkTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = olympicparkTests.h; sourceTree = "<group>"; };
 		B25D43F3146470EE00A7069F /* olympicparkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = olympicparkTests.m; sourceTree = "<group>"; };
+		B25D43FD146473E000A7069F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B2E323FE1466C8E800E8DDF6 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = SOURCE_ROOT; };
+		B2E324031466CC5700E8DDF6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E324041466CC5700E8DDF6 /* CoreLocation.framework in Frameworks */,
+				B25D43FE146473E000A7069F /* AVFoundation.framework in Frameworks */,
 				B25D43C6146470ED00A7069F /* UIKit.framework in Frameworks */,
 				B25D43C8146470ED00A7069F /* Foundation.framework in Frameworks */,
 				B25D43CA146470ED00A7069F /* CoreGraphics.framework in Frameworks */,
@@ -102,6 +110,8 @@
 		B25D43C4146470ED00A7069F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2E324031466CC5700E8DDF6 /* CoreLocation.framework */,
+				B25D43FD146473E000A7069F /* AVFoundation.framework */,
 				B25D43C5146470ED00A7069F /* UIKit.framework */,
 				B25D43C7146470ED00A7069F /* Foundation.framework */,
 				B25D43C9146470ED00A7069F /* CoreGraphics.framework */,
@@ -113,6 +123,7 @@
 		B25D43CB146470ED00A7069F /* olympicpark */ = {
 			isa = PBXGroup;
 			children = (
+				B2E323FE1466C8E800E8DDF6 /* html */,
 				B25D43D4146470ED00A7069F /* AppDelegate.h */,
 				B25D43D5146470ED00A7069F /* AppDelegate.m */,
 				B25D43D7146470ED00A7069F /* MainStoryboard_iPhone.storyboard */,
@@ -227,6 +238,7 @@
 				B25D43D0146470ED00A7069F /* InfoPlist.strings in Resources */,
 				B25D43D9146470ED00A7069F /* MainStoryboard_iPhone.storyboard in Resources */,
 				B25D43DC146470ED00A7069F /* MainStoryboard_iPad.storyboard in Resources */,
+				B2E323FF1466C8E800E8DDF6 /* html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +455,7 @@
 				B25D43F9146470EE00A7069F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B25D43FA146470EE00A7069F /* Build configuration list for PBXNativeTarget "olympicparkTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +464,7 @@
 				B25D43FC146470EE00A7069F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

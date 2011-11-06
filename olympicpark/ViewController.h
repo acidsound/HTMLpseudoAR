@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIWebViewDelegate, CLLocationManagerDelegate, UIAccelerometerDelegate> {
+    UIWebView* webView;
+    CLLocationManager* locationManager;
+    UIAccelerometer* accelerometerManager;
+	UIImagePickerController* cameraController;
+}
 
 @end
