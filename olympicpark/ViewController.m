@@ -7,11 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <AVFoundation/AVCaptureSession.h>
-#import <AVFoundation/AVCaptureDevice.h>
-#import <AVFoundation/AVMediaFormat.h>
-#import <AVFoundation/AVCaptureInput.h>
-#import <AVFoundation/AVCaptureOutput.h>
 
 @implementation ViewController
 

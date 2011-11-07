@@ -3,88 +3,85 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <script>
-    /* 
-     document.getElementById("latitude").innerHTML='37.50268';
-     document.getElementById("logitude").innerHTML='127.04803';
-     
-     var lat1 = parseFloat(document.getElementById("latitude").innerHTML);
-     var lon1 = parseFloat(document.getElementById("logitude").innerHTML);
-     var lat2 = parseFloat(document.getElementById("targetLatitude").value);
-     var lon2 = parseFloat(document.getElementById("targetLogitude").value);
-
-     latDiff=lat2-lat1;
-     lonDiff=lon2-lon1;
-     
-     posAzimuth=(Math.PI*0.5)-Math.atan(latDiff/lonDiff);
-     
-     posAzimuth/Math.PI*360
-     posDegree=(((Math.PI*1.5)-Math.atan(latDiff/lonDiff))%Math.PI)/Math.PI*360);
-     
-     */
     Number.prototype.toRad = function() {  // convert degrees to radians
         return this * Math.PI / 180;
-    }
+    };
     
     Number.prototype.toDeg = function() {  // convert radians to degrees (signed)
         return this * 180 / Math.PI;
-    }
+    };
     
     window.onload = function() {
         // activate LocationManager when window loaded
         document.location.href = 'appsoulute://readyToActivate';
+        document.getElementById("calc").onclick=function() {
+            calculateTargetDistance();
+            return false;
+        };
     };
     calculateTargetDistance=function() {
-        var lat1 = parseFloat(document.getElementById("latitude").innerHTML);
-        var lon1 = parseFloat(document.getElementById("logitude").innerHTML);
-        var lat2 = parseFloat(document.getElementById("targetLatitude").value);
-        var lon2 = parseFloat(document.getElementById("targetLogitude").value);
-
-        var R = 6371; // km
-        var dLat = (lat2-lat1).toRad();
-        var dLon = (lon2-lon1).toRad(); 
-        var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
-        Math.sin(dLon/2) * Math.sin(dLon/2); 
+        var lat1 = parseFloat(document.getElementById("latitude").value).toRad();
+        var lon1 = parseFloat(document.getElementById("logitude").value).toRad();
+        var lat2 = parseFloat(document.getElementById("targetLatitude").value).toRad();
+        var lon2 = parseFloat(document.getElementById("targetLogitude").value).toRad();
+        
+        var dLatitude = lat2 - lat1;
+        var dLongitude = lon2 - lon1;
+        // Intermediate result a.
+        var a = Math.sin(dLatitude / 2.0)* Math.sin(dLatitude / 2.0) + 
+        Math.cos(lat1) * Math.cos(lat2) * 
+        Math.sin(dLongitude / 2.0)*Math.sin(dLongitude / 2.0);
+        
+        // Intermediate result c (great circle distance in Radians).
         var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-        var d = R * c;
-        var value2 = d * 3280.8399;
-        document.getElementById("distance").innerHTML = value2;
+        
+        // Distance.
+        var d2 = 6376.5 * c;      
+        document.getElementById("distance").innerHTML = d2;
         
         /* target Azimuth */
+        lat1 = parseFloat(document.getElementById("latitude").value);
+        lon1 = parseFloat(document.getElementById("logitude").value);
+        lat2 = parseFloat(document.getElementById("targetLatitude").value);
+        lon2 = parseFloat(document.getElementById("targetLogitude").value);
         var latDiff=lat2-lat1;
         var lonDiff=lon2-lon1;
-        
-        var absDegree=(((Math.PI*0.5)-Math.atan(latDiff/lonDiff))%Math.PI)/Math.PI*360;
-        var relDegree=(360+absDegree-parseFloat(document.getElementById("degree").innerHTML))%360;
+
+        var absDegree= 180-Math.atan2(latDiff, lonDiff)*180/Math.PI;
+        var relDegree=(360+absDegree-parseFloat(document.getElementById("degree").value))%360;
         document.getElementById("absDegree").innerHTML = absDegree;
         document.getElementById("relDegree").innerHTML = relDegree;
         document.getElementById("direction").innerHTML = 
-            (relDegree < 30) || (relDegree >360-30) ? "straight" : (relDegree < 180 ) ? "right" : "left";
+        (relDegree < 30) || (relDegree >360-30) ? "straight" : (relDegree < 180 ) ? "right" : "left";
         
-    }
+    };
+    
     setHeading=function(degree) {
         document.getElementById("degree").innerHTML = degree;
         calculateTargetDistance();
-    }
+    };
     setLocation=function(latitude, logitude) {
-        document.getElementById("latitude").innerHTML = latitude;
-        document.getElementById("logitude").innerHTML = logitude;
+        document.getElementById("latitude").value = latitude;
+        document.getElementById("logitude").value = logitude;
         calculateTargetDistance();
-    }
+    };
     setAccelerometer=function(x,y,z) {
         document.getElementById("accelX").innerHTML = x;
         document.getElementById("accelY").innerHTML = y;
         document.getElementById("accelZ").innerHTML = z;
         document.getElementById("accelStatus").innerHTML = z>0.8 || z<-0.8 ? "flat" : "stand";
         calculateTargetDistance();
-    }
+    };
 </script>
 </head>
 <body>
     <h1>Here I am. yo</h1>
     <div id="degree">ready</div>
-    <div id="latitude">ready</div>
-    <div id="logitude">ready</div>
+    <div id="sourceLocation">
+        <label>현재위치</label>
+        <input type="text" id="latitude" value="37.502704"/>
+        <input type="text" id="logitude" value="127.048017"/>
+    </div>
     <div id="accelX">ready</div>
     <div id="accelY">ready</div>
     <div id="accelZ">ready</div>
