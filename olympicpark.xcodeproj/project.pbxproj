@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21223FD14687A060009A35D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B21223FC14687A060009A35D /* README.md */; };
 		B25D43C6146470ED00A7069F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25D43C5146470ED00A7069F /* UIKit.framework */; };
 		B25D43C8146470ED00A7069F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25D43C7146470ED00A7069F /* Foundation.framework */; };
 		B25D43CA146470ED00A7069F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B25D43C9146470ED00A7069F /* CoreGraphics.framework */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21223FC14687A060009A35D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		B25D43C1146470ED00A7069F /* olympicpark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = olympicpark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B25D43C5146470ED00A7069F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B25D43C7146470ED00A7069F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,6 +133,7 @@
 				B25D43DD146470ED00A7069F /* ViewController.h */,
 				B25D43DE146470ED00A7069F /* ViewController.m */,
 				B25D43CC146470ED00A7069F /* Supporting Files */,
+				B21223FC14687A060009A35D /* README.md */,
 			);
 			path = olympicpark;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				B25D43D9146470ED00A7069F /* MainStoryboard_iPhone.storyboard in Resources */,
 				B25D43DC146470ED00A7069F /* MainStoryboard_iPad.storyboard in Resources */,
 				B2E323FF1466C8E800E8DDF6 /* html in Resources */,
+				B21223FD14687A060009A35D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
