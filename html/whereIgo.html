@@ -1,6 +1,14 @@
+<!doctype html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">    
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <script>
     Number.prototype.toRad = function() {  // convert degrees to radians
@@ -16,6 +24,11 @@
         document.location.href = 'appsoulute://readyToActivate';
         document.getElementById("calc").onclick=function() {
             calculateTargetDistance();
+            return false;
+        };
+        document.getElementById("back").onclick=function() {
+//            history.back();
+            document.location.href = './index.html';
             return false;
         };
     };
@@ -57,7 +70,7 @@
     };
     
     setHeading=function(degree) {
-        document.getElementById("degree").innerHTML = degree;
+        document.getElementById("degree").value = degree;
         calculateTargetDistance();
     };
     setLocation=function(latitude, logitude) {
@@ -76,7 +89,12 @@
 </head>
 <body>
     <h1>Here I am. yo</h1>
-    <div id="degree">ready</div>
+    <button id="back" text="back">back</button>
+    <div>
+        <label>현재각도</label>
+        <input type="text" id="degree" value='0'/>
+        <button id="calc" text="button">calc</button>
+    </div>
     <div id="sourceLocation">
         <label>현재위치</label>
         <input type="text" id="latitude" value="37.502704"/>
@@ -91,13 +109,19 @@
         <input type="text" id="targetLatitude" value="37.50203"/>
         <input type="text" id="targetLogitude" value="127.0485"/>
     </div>
-    <div id="distance">
-    </div>    
-    <div id="absDegree">
-    </div>    
-    <div id="relDegree">
+    <div>
+        <span id="distance">
+        </span>    
     </div>
-    <div id="direction">
+    <div>
+        absolute <span id="absDegree">
+        </span> degree
     </div>
+    <div>
+        relative <span id="relDegree">
+        </span> degree
+    </div>
+    <span id="direction">
+    </span>
 </body>
 </html>
